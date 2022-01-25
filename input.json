@@ -1,0 +1,175 @@
+{
+    "description": "FLORIS INPUT FILE",
+    "farm": {
+      "description": "Siemens SWT-2.3-93 turbines",
+      "name": "Siemens SWT-2.3-93 turbines",
+      "properties": {
+        "__comment__": "specified_wind_height of -1 uses the first turbine's hub height; After initialization, specified_wind_height is a free parameter.",
+        "air_density": 1.225,
+        "layout_x": [
+            361469, 361203, 360936, 360670, 360404, 360137,
+            359871, 361203, 360936, 360670, 360404, 360137,
+            359871, 359604, 359338, 360936, 360670, 360404,
+            360137, 359871, 359604, 359338, 359071, 360670,
+            360404, 360137, 359871, 359338, 359071, 358805,
+            360390, 360137, 359871, 359604, 359071, 358805,
+            359871, 359604, 359338, 359071, 358805, 359604,
+            359338, 359071, 358805, 359338, 359071, 358805
+        ],
+        "layout_y": [
+          6154543, 6154244, 6153946, 6153648, 6153349, 6153051,
+          6152753, 6154695, 6154396, 6154098, 6153800, 6153501,
+          6153203, 6152905, 6152606, 6154847, 6154548, 6154250,
+          6153952, 6153653, 6153355, 6153057, 6152758, 6154999,
+          6154701, 6154402, 6154104, 6153507, 6153209, 6152910,
+          6155136, 6154853, 6154554, 6154256, 6153659, 6153361,
+          6155005, 6154706, 6154408, 6154110, 6153811, 6155157,
+          6154858, 6154560, 6154262, 6155309, 6155010, 6154712
+        ],
+        "specified_wind_height": -1,
+        "turbulence_intensity": [
+          0.06
+        ],
+        "wind_direction": [
+          270.0
+        ],
+        "wind_shear": 0.12,
+        "wind_speed": [
+          9.0
+        ],
+        "wind_veer": 0.0,
+        "wind_x": [
+          0
+        ],
+        "wind_y": [
+          0
+        ]
+      },
+      "type": "farm"
+    },
+    "floris_version": "v2.0.0",
+    "logging": {
+      "console": {
+        "enable": true,
+        "level": "INFO"
+      },
+      "file": {
+        "enable": false,
+        "level": "INFO"
+      }
+    },
+    "name": "floris_input_file_Example",
+    "turbine": {
+      "description": "SWT-2.3",
+      "name": "swt_2.3mw",
+      "properties": {
+        "TSR": 8.0,
+        "blade_count": 3,
+        "blade_pitch": 0.0,
+        "generator_efficiency": 1.0,
+        "hub_height": 65.0,
+        "ngrid": 5,
+        "pP": 1.88,
+        "pT": 1.88,
+        "power_thrust_table": {
+          "power": [
+            0.0, 0.2462155256842363, 0.3490957361086033, 0.3950671910694071, 0.41700373401375923, 0.4289832043652271, 0.4349729679451048, 0.4283695595165986, 0.3797607322118071, 0.3134162304151475, 0.25191725001768234, 0.20284757908804898, 0.16513808586701215, 0.13612877621964986, 0.11349144461544594, 0.09560759043135904, 0.08129223901380461, 0.06969793342446072, 0.06020769543199286, 0.052365088974050136, 0.045827522593546964, 0.04033445221322959, 0.0356853419133239
+          ],
+          "thrust": [
+            0.0, 
+            0.81, 
+            0.84, 
+            0.83, 
+            0.85, 
+            0.86, 
+            0.87, 
+            0.79, 
+            0.67, 
+            0.45, 
+            0.34, 
+            0.26, 
+            0.21, 
+            0.17, 
+            0.14, 
+            0.12, 
+            0.1, 
+            0.09, 
+            0.07, 
+            0.07, 
+            0.06, 
+            0.05, 
+            0.05
+          ],
+          "wind_speed": [
+            3.0, 
+            4.0, 
+            5.0, 
+            6.0, 
+            7.0, 
+            8.0, 
+            9.0, 
+            10.0, 
+            11.0, 
+            12.0, 
+            13.0, 
+            14.0, 
+            15.0, 
+            16.0, 
+            17.0, 
+            18.0, 
+            19.0, 
+            20.0, 
+            21.0, 
+            22.0, 
+            23.0, 
+            24.0, 
+            25.0
+          ]
+        },
+        "rloc": 0.5,
+        "rotor_diameter": 92.6,
+        "tilt_angle": 0.0,
+        "use_points_on_perimeter": false,
+        "yaw_angle": 0.0
+      },
+      "type": "turbine"
+    },
+    "type": "floris_input",
+    "wake": {
+      "description": "wake",
+      "name": "wake_default",
+      "properties": {
+        "combination_model": "sosfs",
+        "deflection_model": "gauss",
+        "parameters": {
+          "wake_deflection_parameters": {
+            "gauss": {
+              "dm": 1.0,
+              "eps_gain": 0.2,
+              "use_secondary_steering": true
+            }
+          },
+          "wake_turbulence_parameters": {
+            "crespo_hernandez": {
+              "ai": 0.8,
+              "constant": 0.5,
+              "downstream": -0.32,
+              "initial": 0.1
+            }
+          },
+          "wake_velocity_parameters": {
+            "gauss_legacy": {
+              "calculate_VW_velocities": true,
+              "eps_gain": 0.2,
+              "ka": 0.38,
+              "kb": 0.004,
+              "use_yaw_added_recovery": true
+            }
+          }
+        },
+        "turbulence_model": "crespo_hernandez",
+        "velocity_model": "gauss_legacy"
+      },
+      "type": "wake"
+    }
+  }
